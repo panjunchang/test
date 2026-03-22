@@ -1,0 +1,26 @@
+[project]
+name = "tushare-mcp"
+version = "0.1.0"
+description = "MCP server exposing Tushare data as tools"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "panjunchang" }]
+dependencies = [
+  "mcp>=1.2.0",
+  "tushare>=1.4.0",
+  "pydantic>=2.6",
+  "python-dotenv>=1.0",
+]
+
+[project.scripts]
+tushare-mcp = "tushare_mcp.server:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
